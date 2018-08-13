@@ -1,0 +1,74 @@
+html {box-sizing: border-box;}
+*, *:before, *:after {box-sizing: inherit;}
+
+.mainContainer {
+	display: flex;
+	justify-content: center;
+}
+
+.frontPageContainer {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 750px;
+}
+
+.cityHeader {
+	background: #ddd;
+	height: 55px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 26px;
+}
+
+.categoriesContainer {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	flex-wrap: wrap;
+	margin-top: 5px;
+	margin-right: 20px;
+}
+
+.categories {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #ddd;
+	font-size: 20px;
+	padding: 10px 20px;
+	height: 35px;
+}
+
+.sub-cat {
+	padding-top: 5px;
+}
+
+.listingsContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.listings {
+	padding-top: 5px;
+}
+
+.specificListingContainer {
+	width: 750px;
+}
+
+.listingName {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.listingPicture {
+	margin-top: 30px;
+	margin-left: 5px;
+	width: 550px;
+}
+
+.listingDescription {
+	margin-top: 30px;
+}
