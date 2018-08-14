@@ -12,7 +12,7 @@ import AllListingsPage from './AllListingsPage'
 import SpecificListing from './SpecificListing'
 import PostPage from './PostPage'
 
-class App extends Component {
+class App extends Component { 
   render () {
     return (
     	<Provider store = {store}>
