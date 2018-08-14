@@ -19,7 +19,7 @@ class App extends Component {
 	      <Router>
 	      	<div>
 	      		<Link to="/" id="headerLink">
-	      			<div className="header">Ryan's List</div>
+	      			<div className="header"> Ryan's List </div>
 	      		</Link>
 	      		<div className="mainContainer">
 		      		<Route exact path="/" component={FrontPage}/>
@@ -32,7 +32,7 @@ class App extends Component {
 		      	</div>
 	      	</div>
 	      </Router>
-	    </Provider> 
+	    </Provider>
     )
   }
 }
