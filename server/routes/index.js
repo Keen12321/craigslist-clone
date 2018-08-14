@@ -36,7 +36,7 @@ router.get('/categories', function (req, res, next) {
 router.get('/listings/:id', function (req, res, next) {
   const sql = `
   SELECT
-    list.id, list.child_id, list.name, list.image, list.slug
+    list.id, list.child_id, list.name, list.image
   FROM
     listings list
   LEFT JOIN
@@ -57,15 +57,16 @@ router.get('/listings/:id', function (req, res, next) {
   })
 })
 
-router.get('/d/:id', function (req, res, next) {
+router.get('/alllistings/:id', function (req, res, next) {
   const sql = `
   SELECT
-    list.id, list.parent_id, list.name, list.image, list.slug
+    list.id, list.child_id, list.name, list.image, cat.parent_id
   FROM
     listings list
   LEFT JOIN
-    categories cat ON list.parent_id = cat.id
-  WHERE list.parent_id = cat.id
+    categories cat ON cat.id = list.child_id
+  WHERE 
+    cat.id = list.child_id OR cat.parent_id = list.child_id
   `
 
   conn.query(sql, (error, results, fields) => {
@@ -81,7 +82,7 @@ router.get('/d/:id', function (req, res, next) {
   })
 })
 
-router.get('/l/:id', function (req, res, next) {
+router.get('/specificlisting/:id', function (req, res, next) {
   const sql = `
   SELECT
     list.id, list.name, list.image, list.description
@@ -94,7 +95,7 @@ router.get('/l/:id', function (req, res, next) {
     var array = []
 
     for (var i = 0; i < results.length; i++) {
-      if (results[i].id == id) {
+      if (results[i].child_id == id) {
         array.push(results[i])
       }
     }
@@ -102,54 +103,14 @@ router.get('/l/:id', function (req, res, next) {
   })
 })
 
-router.get('/i', function (req, res, next) {
+router.post('/listings', (req, res, next) => {
   const sql = `
-    SELECT 
-      cat.id, cat.parent_id, cat.category
-    FROM 
-      categories cat
+    INSERT INTO listings (name, child_id, description, image)
+    VALUES (?, ?, ?, ?)
   `
 
-  conn.query(sql, (error, results, fields) => {
-    var array = []
-
-    for (var i = 0; i < results.length; i++) {
-      if (results[i].parent_id == null) {
-        array.push(results[i])
-      }
-    }
-    res.json(array)
-  })
-})
-
-router.post('/i', function (req, res, next) {
-  const sql = `
-    INSERT INTO listings (parent_id)
-    VALUES(?)
-  `
-
-  conn.query(sql, [req.body.parent_id], (error, results, fields) => {
+  conn.query(sql, [req.body.name, req.body.child_id, req.body.description, req.body.image], (error, results, fields) => {
     res.json(results)
-  })
-})
-
-router.get('/a', function (req, res, next) {
-  const sql = `
-    SELECT 
-      cat.id, cat.parent_id, cat.category
-    FROM 
-      categories cat
-  `
-
-  conn.query(sql, (error, results, fields) => {
-    var array = []
-
-    for (var i = 0; i < results.length; i++) {
-      if (results[i].parent_id !== null) {
-        array.push(results[i])
-      }
-    }
-    res.json(array)
   })
 })
 

@@ -11,7 +11,6 @@ class FrontPage extends Component {
  	render() {
    	return (
    		<div>
-   			<Link to="/i">TEST</Link>
 	   		<div className="cityHeader">las vegas</div>
 	 			<div className="frontPageContainer">
 	 				{this.props.categories.map((data, i) => (

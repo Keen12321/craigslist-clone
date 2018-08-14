@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { getListings } from '../actions/frontPageActions'
-import {Link} from 'react-router-dom'
+import {Route, Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 
 class ListingsPage extends Component {
@@ -11,9 +11,11 @@ class ListingsPage extends Component {
  	render() {
    	return (
  			<div className="listingsContainer">
+ 				<Link to={`/posting/${this.props.match.params.id}/add`}>POST</Link>
  				{this.props.listings.map(data => (
 					<Link to={`/l/${data.id}`} className="listings">{data.name}</Link>
  				))}
+
  			</div>
    	)
  	}

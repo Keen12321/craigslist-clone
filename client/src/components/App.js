@@ -5,11 +5,10 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 import {Provider} from 'react-redux'
 
 import FrontPage from './FrontPage'
-import FirstPostPage from './FirstPostPage'
-import SecondPostPage from './SecondPostPage'
 import ListingsPage from './ListingsPage'
 import AllListingsPage from './AllListingsPage'
 import SpecificListing from './SpecificListing'
+import PostPage from './PostPage'
 
 class App extends Component {
   render () {
@@ -21,8 +20,7 @@ class App extends Component {
 	      		<Route path="/listings/:id" component={ListingsPage}/>
 	      		<Route path="/d/:id" component={AllListingsPage}/>
 	      		<Route path="/l/:id" component={SpecificListing}/>
-	      		<Route path="/i" component={FirstPostPage}/>
-	      		<Route path="/a" component={SecondPostPage}/>
+	      		<Route path="/posting/:id/add" component={PostPage}/>
 	      	</div>
 	      </Router>
 	    </Provider>

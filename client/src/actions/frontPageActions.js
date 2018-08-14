@@ -20,7 +20,7 @@ export function getListings(id) {
 }
 
 export function getAllListings(id) {
-	axios.get('/api/d/' + id).then(resp => {
+	axios.get('/api/alllistings/' + id).then(resp => {
 		store.dispatch({
 			type: 'GET_ALL_LISTINGS',
 			payload: resp.data
@@ -29,7 +29,7 @@ export function getAllListings(id) {
 }
 
 export function getSpecificFunction(id) {
-	axios.get('/api/l/' + id).then(resp => {
+	axios.get('/api/specificlisting/' + id).then(resp => {
 		store.dispatch({
 			type: 'GET_SPECIFIC',
 			payload: resp.data
@@ -37,27 +37,7 @@ export function getSpecificFunction(id) {
 	})
 }
 
-export function getFirstPostPage() {
-	axios.get('/api/i').then(resp => {
-		store.dispatch({
-			type: 'GET_FIRST_POST_PAGE',
-			payload: resp.data
-		})
-	})
-}
-
-export function postOne(id) {
-	axios.post('/api/i', {
-		parent_id:id
-	}).then(resp => {
-	})
-}
-
-export function getSecondPostPage() {
-	axios.get('/api/a').then(resp => {
-		store.dispatch({
-			type: 'GET_SECOND_POST_PAGE',
-			payload: resp.data
-		})
+export function post(listing) {
+	axios.post('/api/listings', listing).then(resp => {
 	})
 }

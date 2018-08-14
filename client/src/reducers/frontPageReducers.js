@@ -2,9 +2,7 @@ const initialState = {
 	categories: [],
 	listings: [],
 	allListings: [],
-	specificListing: [],
-	firstPostPage: [],
-	secondPostPage: []
+	specificListing: []
 }
 
 export default function (state = initialState, action) {
@@ -17,10 +15,6 @@ export default function (state = initialState, action) {
 			return {...state, allListings: action.payload}
 		case 'GET_SPECIFIC':
 			return {...state, specificListing: action.payload}
-		case 'GET_FIRST_POST_PAGE':
-			return {...state, firstPostPage: action.payload}
-		case 'GET_SECOND_POST_PAGE':
-			return {...state, secondPostPage: action.payload}
 		default:
 			return state
 	}
