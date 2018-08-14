@@ -32,7 +32,7 @@ class App extends Component {
 		      	</div>
 	      	</div>
 	      </Router>
-	    </Provider>
+	    </Provider> 
     )
   }
 }
