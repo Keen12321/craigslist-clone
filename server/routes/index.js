@@ -95,7 +95,7 @@ router.get('/specificlisting/:id', function (req, res, next) {
     var array = []
 
     for (var i = 0; i < results.length; i++) {
-      if (results[i].child_id == id) {
+      if (results[i].id == id) {
         array.push(results[i])
       }
     }

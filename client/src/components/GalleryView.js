@@ -17,7 +17,7 @@ class GalleryView extends Component {
  				<Link to={`/posting/${this.props.match.params.id}/add`}>POST</Link>
  				{this.props.listings.map(data => (
  					<div className="galleryViewContainer">
-						<Link to={`/l/${data.id}`} className="listings">
+						<Link to={`/specificlisting/${data.id}`} className="listings">
 						<img src={data.image} classname="galleryViewImg"/>
 						<div>{data.name}</div>
 						</Link>

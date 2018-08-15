@@ -15,7 +15,7 @@ class FrontPage extends Component {
 	 			<div className="frontPageContainer">
 	 				{this.props.categories.map((data, i) => (
 	 					<div className="categoriesContainer">
-							<Link to={`/d/${data.id}`} className="categories">{data.category}</Link>
+							<Link to={`/alllistings/${data.id}`} className="categories">{data.category}</Link>
 							{data.sub.map((sub, p) => (
 								<Link to={`/listings/${sub.id}`} className="sub-cat">{sub.category}</Link>
 							))}

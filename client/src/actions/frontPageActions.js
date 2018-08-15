@@ -28,7 +28,7 @@ export function getAllListings(id) {
 	})
 }
 
-export function getSpecificFunction(id) {
+export function getSpecific(id) {
 	axios.get('/api/specificlisting/' + id).then(resp => {
 		store.dispatch({
 			type: 'GET_SPECIFIC',

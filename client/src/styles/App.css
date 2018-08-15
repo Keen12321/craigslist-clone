@@ -90,11 +90,12 @@ html {box-sizing: border-box;}
 
 .thumbViewContainer {
 	display: flex;
-	align-content: flex-start;
+	align-items: center;
 	width: 600px;
 }
 
 .thumbViewImg {
 	width: 30px;
 	height: 30px;
+	margin-right: 15px;
 }

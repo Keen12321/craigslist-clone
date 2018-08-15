@@ -15,7 +15,7 @@ class ListingsPage extends Component {
  				<Link to ={`/thumbview/${this.props.match.params.id}`}>Thumb View</Link>
  				<Link to={`/posting/${this.props.match.params.id}/add`}>POST</Link>
  				{this.props.listings.map(data => (
-					<Link to={`/l/${data.id}`} className="listings">{data.name}</Link>
+					<Link to={`/specificlisting/${data.id}`} className="listings">{data.name}</Link>
  				))}
  			</div>
    	)

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { getSpecificFunction } from '../actions/frontPageActions'
+import { getSpecific } from '../actions/frontPageActions'
 import {connect} from 'react-redux'
 
 class SpecificListing extends Component {
 	componentDidMount() {
-		getSpecificFunction(this.props.match.params.id)
+		getSpecific(this.props.match.params.id)
 	}
 
 	render() {
@@ -13,7 +13,7 @@ class SpecificListing extends Component {
 	 			{this.props.specificListing.map(data => (
 	 				<div className="specificListing">
 						<div className="listingName">{data.name}</div>
-							<img src={data.image} className="listingPicture" alt=""/>
+						<img src={data.image} className="listingPicture" alt=""/>
 						<div className="listingDescription">{data.description}</div>
 					</div>
 	 			))}

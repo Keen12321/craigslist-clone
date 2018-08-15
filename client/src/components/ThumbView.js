@@ -15,7 +15,7 @@ class ThumbView extends Component {
  				<Link to ={`/galleryview/${this.props.match.params.id}`}>Gallery View</Link>
  				<Link to={`/posting/${this.props.match.params.id}/add`}>POST</Link>
  				{this.props.listings.map(data => (
- 				<Link to={`/l/${data.id}`} className="listings">
+ 				<Link to={`/specificlisting/${data.id}`} className="listings">
  					<div className="thumbViewContainer">
 					<img src={data.image} className="thumbViewImg"/>
 					<p>{data.name}</p>

@@ -12,7 +12,7 @@ class AllListingsPage extends Component {
    	return (
  			<div className="listingsContainer">
  				{this.props.allListings.map(data => (
-					<Link to={`/l/${data.id}`} className="listings">{data.name}</Link>
+					<Link to={`/specificlisting/${data.id}`} className="listings">{data.name}</Link>
  				))}
  			</div>
    	)

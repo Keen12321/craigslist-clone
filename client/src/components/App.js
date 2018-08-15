@@ -26,8 +26,8 @@ class App extends Component {
 		      		<Route path="/listings/:id" component={ListingsPage}/>
 		      		<Route path="/thumbview/:id" component={ThumbView}/>
 		      		<Route path="/galleryview/:id" component={GalleryView}/>
-		      		<Route path="/d/:id" component={AllListingsPage}/>
-		      		<Route path="/l/:id" component={SpecificListing}/>
+		      		<Route path="/alllistings/:id" component={AllListingsPage}/>
+		      		<Route path="/specificlisting/:id" component={SpecificListing}/>
 		      		<Route path="/posting/:id/add" component={PostPage}/>
 		      	</div>
 	      	</div>
